@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+    <div name="roomIdDiv">
+        <form id="roomIdForm">
+            <label for="roomNumber">방 번호 입력 : </label>
+            <input id="roomNumber" type="number">
+            <input id="enterRoomBtn" type="button" value="입장">
+        </form>
+    </div>
+    <div name="messageDiv" style="visibility: hidden">
+        <form id="sendMessageForm">
+            <label for="message">메시지 입력 : </label>
+            <input id="message" type="text">
+            <input id="sendMessageBtn" type="button" value="전송">
+        </form>
+    </div>
+    <div id="chattingRoom" style="visibility: hidden">
+        <textarea id="chattingRoomTextarea"></textarea>
+    </div>
+</body>
+</html>
