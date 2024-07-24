@@ -2,27 +2,120 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>home</title>
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>원희의 채팅방구</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input[type="number"], input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        #chattingRoomDiv {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+
+        #chattingRoomTextarea {
+            width: 100%;
+            height: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+            background-color: #fff;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            div {
+                margin-bottom: 15px;
+            }
+
+            input[type="number"], input[type="text"] {
+                padding: 8px;
+                font-size: 14px;
+            }
+
+            input[type="button"] {
+                padding: 8px;
+                font-size: 14px;
+            }
+
+            #chattingRoomTextarea {
+                height: 200px;
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div name="roomIdDiv">
-        <form id="roomIdForm">
-            <label for="roomNumber">방 번호 입력 : </label>
-            <input id="roomNumber" type="number">
-            <label for="userName">이름 입력 : </label>
-            <input id="userName" type="text">
-            <input id="enterRoomBtn" type="button" value="입장">
-        </form>
+    <div id="roomIdDiv">
+        <label for="roomNumber">방 번호 입력 : </label>
+        <input id="roomNumber" type="number">
+        <label for="userName">이름 입력 : </label>
+        <input id="userName" type="text">
+        <input id="enterRoomBtn" type="button" value="입장">
     </div>
-    <div name="messageDiv">
-        <form id="sendMessageForm">
-            <label for="message">메시지 입력 : </label>
-            <input id="message" type="text">
-            <input id="sendMessageBtn" type="button" value="전송">
-        </form>
+    <div id="messageDiv" style="visibility: hidden">
+        <label for="message">메시지 입력 : </label>
+        <input id="message" type="text">
+        <input id="sendMessageBtn" type="button" value="전송">
     </div>
-    <div id="chattingRoom">
-        <textarea id="chattingRoomTextarea"></textarea>
+    <div id="chattingRoomDiv" style="visibility: hidden">
+        <textarea id="chattingRoomTextarea" disabled></textarea>
     </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>
