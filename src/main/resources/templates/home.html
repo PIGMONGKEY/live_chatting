@@ -9,18 +9,23 @@
         <form id="roomIdForm">
             <label for="roomNumber">방 번호 입력 : </label>
             <input id="roomNumber" type="number">
+            <label for="userName">이름 입력 : </label>
+            <input id="userName" type="text">
             <input id="enterRoomBtn" type="button" value="입장">
         </form>
     </div>
-    <div name="messageDiv" style="visibility: hidden">
+    <div name="messageDiv">
         <form id="sendMessageForm">
             <label for="message">메시지 입력 : </label>
             <input id="message" type="text">
             <input id="sendMessageBtn" type="button" value="전송">
         </form>
     </div>
-    <div id="chattingRoom" style="visibility: hidden">
+    <div id="chattingRoom">
         <textarea id="chattingRoomTextarea"></textarea>
     </div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="js/chatting.js"></script>
 </html>
